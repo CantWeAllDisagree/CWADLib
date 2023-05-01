@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "cwadlib",
+  "version": "${version}",
+  "name": "CWADLib",
+  "description": "",
+  "authors": [
+    "CantWeAllDisagree"
+  ],
+  "contact": {
+    "website": "https://github.com/CantWeAllDisagree?tab=repositories",
+    "repo": "https://github.com/CantWeAllDisagree/CWADLib"
+  },
+  "license": "AGPL-3.0",
+  "icon": "assets/CWADLib/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+    ],
+    "main": [
+      "cantwe.alldisagree.cwadlib.testitem.THatchet"
+    ]
+  },
+  "mixins": [
+    "CWADLib.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "0.14.12+",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}

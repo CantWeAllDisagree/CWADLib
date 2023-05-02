@@ -2,12 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "II ",
-    "IW ",
-    " W "
+    "IS ",
+    "  S"
   ],
   "key": {
-    "W": {
-      "tag": "minecraft:stick"
+    "S": {
+      "item": "minecraft:stick"
     },
     "I": {
       "item": "minecraft:iron_ingot"

@@ -16,6 +16,7 @@
   "environment": "*",
   "entrypoints": {
     "client": [
+      "cantwe.alldisagree.cwadlib.CWADLibClient"
     ],
     "main": [
       "cantwe.alldisagree.cwadlib.CWADLibMain"

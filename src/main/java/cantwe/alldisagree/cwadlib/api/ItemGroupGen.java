@@ -21,9 +21,10 @@ import java.util.function.Supplier;
 
 public class ItemGroupGen {
 
-    public static <TabImg extends Supplier<ItemStack>> ItemGroup register(TabImg groupImg, String tabName){
+    // Used to create new tabs for modded items/blocks
+    public static <TabImg extends Supplier<ItemStack>> ItemGroup register(TabImg groupImg,String modID, String tabName){
         // Create the identifier for the group.
-        Identifier groupID = new Identifier("cwadlib", tabName);
+        Identifier groupID = new Identifier(modID, tabName);
 
         // Build group and Display Img
         return FabricItemGroupBuilder.build(groupID, groupImg);

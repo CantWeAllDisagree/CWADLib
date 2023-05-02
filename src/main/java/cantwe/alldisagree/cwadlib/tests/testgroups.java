@@ -17,6 +17,6 @@ import net.minecraft.block.Blocks;
 import cantwe.alldisagree.cwadlib.api.ItemGroupGen;
 import net.minecraft.item.ItemStack;
 public class testgroups extends ItemGroupGen {
-    public static final net.minecraft.item.ItemGroup TEST_GROUP = register(() -> new ItemStack(THatchet.T_HATCHET), "test");
-    public static final net.minecraft.item.ItemGroup TEST_GROUP2 = register(() -> new ItemStack(Blocks.CRYING_OBSIDIAN), "test2");
+    public static final net.minecraft.item.ItemGroup TEST_GROUP = register(() -> new ItemStack(THatchet.T_HATCHET),"cwadlib", "test");
+    public static final net.minecraft.item.ItemGroup TEST_GROUP2 = register(() -> new ItemStack(Blocks.CRYING_OBSIDIAN), "cwadlib","test2");
 }

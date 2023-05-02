@@ -10,28 +10,16 @@
 |   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 |   GNU Affero General Public License for more details.
 */
-package cantwe.alldisagree.cwadlib.testitems;
+package cantwe.alldisagree.cwadlib.tests.items;
 
-import net.minecraft.client.item.TooltipContext;
+import cantwe.alldisagree.cwadlib.tests.testgroups;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
-import net.minecraft.world.World;
+import cantwe.alldisagree.cwadlib.api.ItemGen;
 
-import java.util.List;
+public class THatchet extends ItemGen{
 
-public class TItem extends Item {
+    public static final Item T_HATCHET = register(new TItem(new FabricItemSettings().group(testgroups.TEST_GROUP)), "throwing_hatchet");
 
-    public TItem(Settings settings) {
-        super(settings);
-    }
-    @Override
-    public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
-
-        // default white text
-        tooltip.add(Text.translatable("item.cwadlib.throwing_hatchet.tooltip"));
-
-    }
-
-
+    public static void initialize() {}
 }

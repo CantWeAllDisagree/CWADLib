@@ -10,23 +10,28 @@
 |   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 |   GNU Affero General Public License for more details.
 */
-package cantwe.alldisagree.cwadlib.item;
+package cantwe.alldisagree.cwadlib.tests.items;
 
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Identifier;
+import net.minecraft.item.TridentItem;
+import net.minecraft.text.Text;
+import net.minecraft.world.World;
 
-import java.util.function.Supplier;
+import java.util.List;
 
-public class CWADLibItemGroup {
+public class TItem extends TridentItem {
 
-    public static <TabImg extends Supplier<ItemStack>> ItemGroup register(TabImg groupimg, String tabName){
-        // Create the identifier for the group.
-        Identifier groupID = new Identifier("cwadlib", tabName);
-
-        // Build group and Display Img
-        return FabricItemGroupBuilder.build(groupID, groupimg);
+    public TItem(Settings settings) {
+        super(settings);
     }
-    public static void initialize() {}
+
+    @Override
+    public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+
+        // default white text
+        tooltip.add(Text.translatable("item.cwadlib.throwing_hatchet.tooltip"));
+
+    }
+
 }

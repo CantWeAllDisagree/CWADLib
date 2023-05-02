@@ -12,8 +12,8 @@
 */
 package cantwe.alldisagree.cwadlib;
 
-import cantwe.alldisagree.cwadlib.item.CWADLibItemGroup;
-import cantwe.alldisagree.cwadlib.testitems.THatchet;
+import cantwe.alldisagree.cwadlib.api.ItemGroupGen;
+import cantwe.alldisagree.cwadlib.tests.items.THatchet;
 import net.fabricmc.api.ModInitializer;
 
 public class CWADLibMain implements ModInitializer {
@@ -22,7 +22,7 @@ public class CWADLibMain implements ModInitializer {
 
         THatchet.initialize();
 
-        CWADLibItemGroup.initialize();
+        ItemGroupGen.initialize();
 
 
 

@@ -10,16 +10,23 @@
 |   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 |   GNU Affero General Public License for more details.
 */
-package cantwe.alldisagree.cwadlib.testitems;
+package cantwe.alldisagree.cwadlib.api;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.item.ItemGroup;
 
-public class THatchet {
+import java.util.function.Supplier;
 
-    public static final TItem T_HATCHET =
-            Registry.register(Registry.ITEM, new Identifier("cwadlib", "throwing_hatchet"),
-        new TItem(new FabricItemSettings().maxCount(7).group(testgroup.TEST_GROUP)));
+public class ItemGroupGen {
+
+    public static <TabImg extends Supplier<ItemStack>> ItemGroup register(TabImg groupImg, String tabName){
+        // Create the identifier for the group.
+        Identifier groupID = new Identifier("cwadlib", tabName);
+
+        // Build group and Display Img
+        return FabricItemGroupBuilder.build(groupID, groupImg);
+    }
     public static void initialize() {}
 }

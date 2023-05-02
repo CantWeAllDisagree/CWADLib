@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "II ",
+    "IW ",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "tag": "minecraft:stick"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "cwadlib:throwing_hatchet",
+    "count": 3
+  }
+}
+

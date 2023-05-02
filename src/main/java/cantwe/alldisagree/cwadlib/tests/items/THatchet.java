@@ -19,7 +19,7 @@ import cantwe.alldisagree.cwadlib.api.ItemGen;
 
 public class THatchet extends ItemGen{
 
-    public static final Item T_HATCHET = register(new TItem(new FabricItemSettings().group(testgroups.TEST_GROUP)), "throwing_hatchet");
+    public static final Item T_HATCHET = register(new TItem(new FabricItemSettings().maxCount(7).group(testgroups.TEST_GROUP)), "throwing_hatchet");
 
     public static void initialize() {}
 }

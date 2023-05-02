@@ -3,7 +3,7 @@
   "id": "cwadlib",
   "version": "${version}",
   "name": "CWADLib",
-  "description": "",
+  "description": "Lib for CWAD mods",
   "authors": [
     "CantWeAllDisagree"
   ],
@@ -12,13 +12,13 @@
     "repo": "https://github.com/CantWeAllDisagree/CWADLib"
   },
   "license": "AGPL-3.0",
-  "icon": "assets/CWADLib/icon.png",
+  "icon": "assets/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
     ],
     "main": [
-      "cantwe.alldisagree.cwadlib.testitem.THatchet"
+      "cantwe.alldisagree.cwadlib.CWADLibMain"
     ]
   },
   "mixins": [

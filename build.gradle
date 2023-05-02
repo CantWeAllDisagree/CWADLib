@@ -7,14 +7,17 @@ archivesBaseName = project.archives_base_name
 version = project.version
 group = project.maven_group
 
-
-repositories {}
+repositories {
+    maven { url "https://www.cursemaven.com" }
+}
 
 dependencies {
     minecraft libs.minecraft
     mappings variantOf(libs.yarn) { classifier 'v2' }
     modImplementation libs.fabricloader
     modImplementation libs.fabric
+    // ARRP
+    modImplementation include("curse.maven:arrp-463113:3901211"){exclude group: "net.fabricmc.fabric-api"}
 }
 
 processResources {
@@ -43,7 +46,6 @@ java {
     if (JavaVersion.current() < javaVersion) {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
-    archivesBaseName = project.archives_base_name
     withSourcesJar()
 }
 

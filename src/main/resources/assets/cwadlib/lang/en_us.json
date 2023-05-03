@@ -1,6 +1,7 @@
 {
   "item.cwadlib.throwing_hatchet.tooltip": "§e....Yeet!",
   "item.cwadlib.throwing_hatchet": "Throwing Hatchet",
-  "itemGroup.cwadlib.test": "§5CWADLib Item's",
-  "itemGroup.cwadlib.test2": "§5CWADLib Blocks"
+  "itemGroup.cwadlib.test": "§5C§aW§5A§aD§5Lib §aItem's",
+  "itemGroup.cwadlib.test2": "§5C§aW§5A§aD§5Lib §aBlocks",
+  "block.cwadlib.cwad_block": "§5C§aW§5A§aD §aB§5l§ao§5c§ak"
 }

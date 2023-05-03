@@ -12,14 +12,15 @@
 */
 package cantwe.alldisagree.cwadlib.tests.items;
 
-import cantwe.alldisagree.cwadlib.tests.testgroups;
+import cantwe.alldisagree.cwadlib.api.ItemGen;
+import cantwe.alldisagree.cwadlib.tests.TestGroups;
+import cantwe.alldisagree.cwadlib.util.CustomThrownItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import cantwe.alldisagree.cwadlib.api.ItemGen;
 
-public class THatchet extends ItemGen{
 
-    public static final Item T_HATCHET = register(new TItem(new FabricItemSettings().maxCount(7).group(testgroups.TEST_GROUP)), "throwing_hatchet");
+public class ItemReg extends ItemGen {
 
+    public static final Item T_HATCHET = register(new CustomThrownItem(new FabricItemSettings().maxCount(7).group(TestGroups.TEST_GROUP)), "throwing_hatchet");
     public static void initialize() {}
 }

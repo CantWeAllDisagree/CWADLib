@@ -10,15 +10,12 @@
 |   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 |   GNU Affero General Public License for more details.
 */
-package cantwe.alldisagree.cwadlib.util;
+package cantwe.alldisagree.cwadlib.tests;
 
-import cantwe.alldisagree.cwadlib.util.entity.ThrowableItemEntity;
+import cantwe.alldisagree.cwadlib.tests.entity.THatchetEntity;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
@@ -32,19 +29,18 @@ import java.util.List;
 public class CustomThrownItem extends AxeItem {
 
 
-    public CustomThrownItem(Item.Settings settings) {
-        super(ToolMaterials.IRON, 2, 1.5F,settings);
+    public CustomThrownItem(Item.Settings settings) {super(ToolMaterials.IRON, 1, 0.5F,settings);
     }
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
-        world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ITEM_TRIDENT_THROW, SoundCategory.NEUTRAL, 1F, 1F);
-        //user.getItemCooldownManager().set(this, 2); // ThrownItem Cooldown
+        world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.NEUTRAL, 1F, 2F);
+        user.getItemCooldownManager().set(this, 1); // ThrownItem Cooldown
 
         if (!world.isClient) {
-            ThrowableItemEntity CustomThrownItem = new ThrowableItemEntity(world, user);
+            THatchetEntity CustomThrownItem = new THatchetEntity(world, user);
             CustomThrownItem.setItem(itemStack);
-            CustomThrownItem.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.7F, 0F);
+            CustomThrownItem.setVelocity(user, user.getPitch(), user.getYaw(), 0.2F, 1.9F, 0F);
             world.spawnEntity(CustomThrownItem);
         }
 

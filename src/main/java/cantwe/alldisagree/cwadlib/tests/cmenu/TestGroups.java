@@ -10,10 +10,11 @@
 |   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 |   GNU Affero General Public License for more details.
 */
-package cantwe.alldisagree.cwadlib.tests;
+package cantwe.alldisagree.cwadlib.tests.cmenu;
 
-import cantwe.alldisagree.cwadlib.tests.blocks.BlockReg;
-import cantwe.alldisagree.cwadlib.tests.items.ItemReg;
+import cantwe.alldisagree.cwadlib.CWADLibMain;
+import cantwe.alldisagree.cwadlib.tests.reg.BlockReg;
+import cantwe.alldisagree.cwadlib.tests.reg.ItemReg;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import cantwe.alldisagree.cwadlib.api.ItemGroupGen;
 import net.minecraft.item.ItemStack;
@@ -23,7 +24,7 @@ import net.minecraft.util.Identifier;
 public class TestGroups extends ItemGroupGen {
     public static final ItemGroup TEST_GROUP = register(() -> new ItemStack(ItemReg.T_HATCHET),"cwadlib", "test");
     public static final ItemGroup TEST_GROUP_2 = FabricItemGroupBuilder.create(
-                    new Identifier("cwadlib", "test2"))
+                    new Identifier(CWADLibMain.ModID, "test2"))
             .icon(() -> new ItemStack(BlockReg.CWAD_Block))
             .appendItems(stacks -> {
                 stacks.add(new ItemStack(BlockReg.CWAD_Block));

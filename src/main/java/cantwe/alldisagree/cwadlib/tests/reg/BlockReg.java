@@ -10,17 +10,21 @@
 |   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 |   GNU Affero General Public License for more details.
 */
-package cantwe.alldisagree.cwadlib.tests.items;
+package cantwe.alldisagree.cwadlib.tests.reg;
 
-import cantwe.alldisagree.cwadlib.api.ItemGen;
-import cantwe.alldisagree.cwadlib.tests.TestGroups;
-import cantwe.alldisagree.cwadlib.util.CustomThrownItem;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.Item;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.sound.BlockSoundGroup;
 
+import static cantwe.alldisagree.cwadlib.api.ItemGen.registerBlock;
 
-public class ItemReg extends ItemGen {
+public class BlockReg {
 
-    public static final Item T_HATCHET = register(new CustomThrownItem(new FabricItemSettings().maxCount(7).group(TestGroups.TEST_GROUP)), "throwing_hatchet");
-    public static void initialize() {}
+    public static Block CWAD_Block;
+    public static void init() {
+       CWAD_Block = registerBlock(new Block(AbstractBlock.Settings.of(Material.METAL).sounds(BlockSoundGroup.AMETHYST_CLUSTER)),
+                "cwad_block", true);
+    }
+
 }

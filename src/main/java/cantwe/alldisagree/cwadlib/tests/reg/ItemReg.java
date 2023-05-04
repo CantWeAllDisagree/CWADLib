@@ -23,9 +23,11 @@ public class ItemReg extends ItemGen {
 
     public static Item T_HATCHET;
     public static Item T_KNIFE;
+    public static Item SATCHEL;
 
     public static void init() {
         T_HATCHET = registerItem(new CustomThrownItem(new FabricItemSettings().maxCount(7).group(TestGroups.TEST_GROUP)), "throwing_hatchet");
         T_KNIFE = registerItem(new Item(new FabricItemSettings().group(TestGroups.TEST_GROUP)), "throwing_knife");
+        SATCHEL = registerItem(new Item(new FabricItemSettings().group(TestGroups.TEST_GROUP)), "satchel");
     }
 }

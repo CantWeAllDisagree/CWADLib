@@ -1,0 +1,2 @@
+accessWidener	v1	named
+accessible method net/minecraft/entity/attribute/EntityAttributes register (Ljava/lang/String;Lnet/minecraft/entity/attribute/EntityAttribute;)Lnet/minecraft/entity/attribute/EntityAttribute;

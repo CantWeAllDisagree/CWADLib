@@ -20,6 +20,9 @@
     ],
     "main": [
       "cantwe.alldisagree.cwadlib.CWADLibMain"
+    ],
+    "modmenu": [
+      "cantwe.alldisagree.cwadlib.ModMenuIntegration"
     ]
   },
   "mixins": [

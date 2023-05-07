@@ -1,7 +1,102 @@
 {
-  "item.cwadlib.throwing_hatchet.tooltip": "§e....Yeet!",
+  "item.cwadlib.throwme.tooltip": "§e....Yeet!",
   "item.cwadlib.throwing_hatchet": "Throwing Hatchet",
+  "item.cwadlib.throwing_cleaver": "Throwing Cleaver",
   "itemGroup.cwadlib.test": "§5C§aW§5A§aD§5Lib §aItem's",
   "itemGroup.cwadlib.test2": "§5C§aW§5A§aD§5Lib §aBlocks",
-  "block.cwadlib.cwad_block": "§5C§aW§5A§aD §aB§5l§ao§5c§ak"
+  "block.cwadlib.cwad_block": "§5C§aW§5A§aD §aB§5l§ao§5c§ak",
+
+
+
+
+
+  "key.cwadlib": "Throw",
+  "enchantment.cwadlib.throw": "Throw",
+  "enchantment.cwadlib.throw.desc": "Increase throwing damage",
+  "enchantment.cwadlib.groundededge": "Grounded Edge",
+  "enchantment.cwadlib.groundededge.desc": "Apply weakness in area",
+  "enchantment.cwadlib.conccusion": "Concussion",
+  "enchantment.cwadlib.conccusion.desc": "Apply nausea and slowness",
+  "enchantment.cwadlib.gravity": "Curse of Gravity",
+  "enchantment.cwadlib.gravity.desc": "Your weapon defies gravity, at a cost",
+  "enchantment.cwadlib.return": "Return",
+  "enchantment.cwadlib.return.desc": "Your weapons come back",
+  "cwadlib.pmmo.requirementThrowing": "You need combat level %d to throw that weapon",
+  "cwadlib.pmmo.requirementLoyalty": "You need combat level %d to use loyalty",
+
+  //Tetra Enchantment Integration
+  "tetra.improvement.enchantment/cwadlib_throw.name": "Throw",
+  "tetra.improvement.enchantment/cwadlib_throw.description": "Increase throwing damage",
+  "tetra.improvement.destabilized/cwadlib_throw.name": "Destabilized: Throw",
+  "tetra.improvement.destabilized/cwadlib_throw.description": "Reduces the effect of the Throw enchantment",
+  "tetra.improvement.enchantment/cwadlib_groundededge.name": "Grounded Edge",
+  "tetra.improvement.enchantment/cwadlib_groundededge.description": "Apply weakness in area",
+  "tetra.improvement.destabilized/cwadlib_groundededge.name": "Destabilized: Grounded Edge",
+  "tetra.improvement.destabilized/cwadlib_groundededge.description": "Reduces the effect of the Grounded Edge enchantment",
+  "tetra.improvement.enchantment/cwadlib_conccusion.name": "Concussion",
+  "tetra.improvement.enchantment/cwadlib_conccusion.description": "Apply nausea and slowness",
+  "tetra.improvement.destabilized/cwadlib_conccusion.name": "Destabilized: Concussion",
+  "tetra.improvement.destabilized/cwadlib_conccusion.description": "Reduces the effect of the Concussion enchantment",
+  "tetra.improvement.enchantment/cwadlib_gravity.name": "Curse of Gravity",
+  "tetra.improvement.enchantment/cwadlib_gravity.description": "Your weapon defies gravity, at a cost",
+  "tetra.improvement.enchantment/cwadlib_return.name": "Return",
+  "tetra.improvement.enchantment/cwadlib_return.description": "Your weapons come back",
+  "tetra.improvement.destabilized/cwadlib_return.name": "Destabilized: Return",
+  "tetra.improvement.destabilized/cwadlib_return.description": "Reduces the effect of the Return enchantment",
+
+  //ModMenu Gui Integration
+
+  "text.autoconfig.cwadlib.title": "Weapon Throw Config",
+
+  "text.autoconfig.cwadlib.category.general": "General",
+  "text.autoconfig.cwadlib.option.general.creativeSpamming": "Creative Spamming",
+  "text.autoconfig.cwadlib.option.general.notUseWhenCooldown": "Not use when cooldown",
+
+  "text.autoconfig.cwadlib.category.defaults": "Defaults",
+  "text.autoconfig.cwadlib.option.defaults.baseDamageDefault": "Default base damage for non weapons",
+  "text.autoconfig.cwadlib.option.defaults.velocityDefault": "Default base velocity for non weapons",
+
+  "text.autoconfig.cwadlib.category.enchantments": "Enchantments",
+  "text.autoconfig.cwadlib.option.enchantments.enchantAllWeapons": "All weapons can be enchanted",
+  "text.autoconfig.cwadlib.option.enchantments.enableThrow": "Enable Throw Enchantment",
+  "text.autoconfig.cwadlib.option.enchantments.enableConccusion": "Enable Concussion Enchantment",
+  "text.autoconfig.cwadlib.option.enchantments.enableGroundedEdge": "Enable Grounded Edge Enchantment",
+  "text.autoconfig.cwadlib.option.enchantments.enableGravity": "Enable Gravity Enchantment",
+  "text.autoconfig.cwadlib.option.enchantments.enableReturn": "Enable Return Enchantment",
+
+  "text.autoconfig.cwadlib.category.experimental": "Experimental",
+  "text.autoconfig.cwadlib.option.experimental.shouldThrowItemsToo": "Can throw any Items",
+
+  "text.autoconfig.cwadlib.category.interactions": "Interactions",
+  "text.autoconfig.cwadlib.option.interactions.canBreakBlocks": "Can break blocks",
+
+  "text.autoconfig.cwadlib.category.multipliers": "Multipliers",
+
+  "text.autoconfig.cwadlib.option.multipliers.tools": "Tools Multipliers",
+  "text.autoconfig.cwadlib.option.multipliers.tools.pickaxeMultiplier": "Pickaxe Multiplier",
+  "text.autoconfig.cwadlib.option.multipliers.tools.axeMultiplier": "Axe Multiplier",
+  "text.autoconfig.cwadlib.option.multipliers.tools.swordMultiplier": "Sword Multiplier",
+  "text.autoconfig.cwadlib.option.multipliers.tools.hoeMultiplier": "Hoe Multiplier",
+  "text.autoconfig.cwadlib.option.multipliers.tools.shovelMultiplier": "Shovel Multiplier",
+
+  "text.autoconfig.cwadlib.option.multipliers.damages": "Damage Multipliers",
+  "text.autoconfig.cwadlib.option.multipliers.damages.baseDamageMultiplier": "Base Damage Multiplier",
+  "text.autoconfig.cwadlib.option.multipliers.damages.stackDamageMultiplier": "Stack Damage Multiplier",
+  "text.autoconfig.cwadlib.option.multipliers.damages.modifiedDamageMultiplier": "Modified Damage Multiplier",
+
+  "text.autoconfig.cwadlib.option.multipliers.velocities": "Velocity Multipliers",
+  "text.autoconfig.cwadlib.option.multipliers.velocities.baseVelocityMultiplier": "Base Velocity Multiplier",
+  "text.autoconfig.cwadlib.option.multipliers.velocities.stackVelocityMultiplier": "Stack Velocity Multiplierr",
+  "text.autoconfig.cwadlib.option.multipliers.velocities.modifiedVelocityMultiplier": "Modified Velocity Multiplier",
+
+  "text.autoconfig.cwadlib.option.multipliers.exhaustions": "Exhaustion Multipliers",
+  "text.autoconfig.cwadlib.option.multipliers.exhaustions.baseExhaustionMultiplier": "Base Exhaustion Multiplier",
+  "text.autoconfig.cwadlib.option.multipliers.exhaustions.stackExhaustionMultiplier": "Stack Exhaustion Multiplier",
+  "text.autoconfig.cwadlib.option.multipliers.exhaustions.modifiedExhaustionMultiplier": "Modified Exhaustion Multiplier",
+
+
+  "text.autoconfig.cwadlib.category.times": "Times",
+  "text.autoconfig.cwadlib.option.times.despawnTime": "Despawn Time",
+  "text.autoconfig.cwadlib.option.times.castTimeMuliplier": "Cast Time Multiplier",
+  "text.autoconfig.cwadlib.option.times.ticksUntilWeaponLoseOwner": "Ticks until weapon lose owner"
 }

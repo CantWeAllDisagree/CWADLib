@@ -13,9 +13,13 @@
 package cantwe.alldisagree.cwadlib;
 
 import cantwe.alldisagree.cwadlib.api.ItemGroupGen;
+import cantwe.alldisagree.cwadlib.tests.handlers.EnchantmentHandler;
+import cantwe.alldisagree.cwadlib.tests.handlers.EventsHandler;
+import cantwe.alldisagree.cwadlib.tests.handlers.PacketHandler;
 import cantwe.alldisagree.cwadlib.tests.reg.BlockReg;
+import cantwe.alldisagree.cwadlib.tests.reg.ConfigRegistry;
+import cantwe.alldisagree.cwadlib.tests.reg.EntityReg;
 import cantwe.alldisagree.cwadlib.tests.reg.ItemReg;
-import cantwe.alldisagree.cwadlib.tests.entity.THatchetEntity;
 import net.fabricmc.api.ModInitializer;
 
 public class CWADLibMain implements ModInitializer {
@@ -25,14 +29,15 @@ public class CWADLibMain implements ModInitializer {
     public void onInitialize() {
 
         ItemReg.init();
-        THatchetEntity.initialize();
         ItemGroupGen.initialize();
         BlockReg.init();
 
 
-
-
-
+        ConfigRegistry.registerConfig();
+        EntityReg.registerEntities();
+        EnchantmentHandler.registerEnchantments();
+        EventsHandler.registerEvents();
+        PacketHandler.registerServerListeners();
 
     }
 }

@@ -1,11 +1,16 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "cantwe.alldisagree.cwadlib.mixin",
+  "package": "cantwe.alldisagree.cwadlib.tests.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "PlayerEntityMixin"
   ],
   "client": [
+    "client.ClientPlayerEntityMixin",
+    "client.HeldItemRendererMixin",
+    "client.PlayerEntityRendererMixin",
+    "client.AbstractClientPlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -12,7 +12,10 @@
 */
 package cantwe.alldisagree.cwadlib;
 
-import cantwe.alldisagree.cwadlib.tests.entity.THatchetEntity;
+import cantwe.alldisagree.cwadlib.tests.handlers.EventsHandler;
+import cantwe.alldisagree.cwadlib.tests.handlers.KeyBindingHandler;
+import cantwe.alldisagree.cwadlib.tests.handlers.PacketHandler;
+import cantwe.alldisagree.cwadlib.tests.reg.client.RenderRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
@@ -21,6 +24,11 @@ public class CWADLibClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        EntityRendererRegistry.register(THatchetEntity.ThrowableItemEntityEntityType, FlyingItemEntityRenderer::new);
+
+        RenderRegistry.registerRenderers();
+        EventsHandler.registerClientEvents();
+        PacketHandler.registerClientListeners();
+        KeyBindingHandler.registerKeyBindings();
+
     }
 }

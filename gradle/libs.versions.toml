@@ -1,18 +1,26 @@
 [versions]
 minecraft = "1.19.2"
-yarn= "1.19.2+build.28"
-fabricloader= "0.14.12"
-fabric="0.76.0+1.19.2"
+yarn = "1.19.2+build.28"
+fabricloader = "0.14.12"
+fabric = "0.76.0+1.19.2"
+amecsAPI= "1+"
+nmuk = "1.1.0+mc1.19.2"
+lazyDFU = "4SHylIO9"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
 yarn = { module = "net.fabricmc:yarn", version.ref = "yarn" }
 fabricloader = { module = "net.fabricmc:fabric-loader", version.ref = "fabricloader" }
 fabric = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric" }
+amecs = { module = "de.siphalor:amecsapi-1.19", version.ref = "amecsAPI" }
+nmuk = { module = "de.siphalor:nmuk-1.19", version.ref = "nmuk" }
+lazyDFU = { module = "maven.modrinth:lazydfu", version.ref = "lazyDFU" }
+
 
 # If you have multiple similar dependencies, you can declare a dependency bundle and reference it on the build script with "libs.bundles.example".
 [bundles]
 fabricapi = ["fabricloader", "fabric"]
+runtime = ["nmuk", "lazyDFU"]
 
 [plugins]
 loom = { id = "fabric-loom", version = "1.1-SNAPSHOT" }

@@ -12,13 +12,11 @@
 */
 package cantwe.alldisagree.cwadlib;
 
-import cantwe.alldisagree.cwadlib.tests.handlers.EventsHandler;
-import cantwe.alldisagree.cwadlib.tests.handlers.KeyBindingHandler;
-import cantwe.alldisagree.cwadlib.tests.handlers.PacketHandler;
-import cantwe.alldisagree.cwadlib.tests.reg.client.RenderRegistry;
+import cantwe.alldisagree.cwadlib.throwme.handlers.EventsHandler;
+import cantwe.alldisagree.cwadlib.throwme.handlers.KeyBindingHandler;
+import cantwe.alldisagree.cwadlib.throwme.handlers.PacketHandler;
+import cantwe.alldisagree.cwadlib.throwme.reg.client.RenderRegistry;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 
 public class CWADLibClient implements ClientModInitializer {
 

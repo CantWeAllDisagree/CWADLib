@@ -9,30 +9,31 @@ group = project.maven_group
 
 repositories {
     maven { url "https://www.cursemaven.com" }
-    maven { url "https://maven.shedaniel.me/" }
-    maven { url = "https://maven.terraformersmc.com/"}
+    maven { url "https://maven.siphalor.de/"}
+    maven { url "https://api.modrinth.com/maven" }
+    maven { url "https://jitpack.io" }
+
 }
 
 loom{
-    accessWidenerPath = file("src/main/resources/cwadlib.accesswidener")
+    accessWidenerPath = file("src/main/resources/CWADLib.accesswidener")
 }
 
 dependencies {
     minecraft libs.minecraft
     mappings variantOf(libs.yarn) { classifier 'v2' }
-    modImplementation libs.fabricloader
-    modImplementation libs.fabric
+    modImplementation libs.bundles.fabricapi
     // ARRP
-    modImplementation include("curse.maven:arrp-463113:3901211"){exclude group: "net.fabricmc.fabric-api"}
+    modImplementation include("curse.maven:arrp-463113:3901211") { exclude group: "net.fabricmc.fabric-api" }
 
-    // ModMenu
-    modCompileOnly modRuntimeOnly("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
-        exclude group: "net.fabricmc.fabric-api"
-    }
-    modCompileOnly modRuntimeOnly ("com.terraformersmc:modmenu:${project.mod_menu_version}") {
-        exclude group: "net.fabricmc.fabric-api"
-    }
+
+
+
+    // AMECS API
+    modApi (libs.amecs) { exclude group: "net.fabricmc.fabric-api" }
+    modRuntimeOnly libs.bundles.runtime
 }
+
 
 processResources {
     inputs.property "version", project.version
@@ -70,6 +71,19 @@ jar {
 }
 
 publishing {
-    publications {}
-    repositories {}
+    publications {
+        modPublication(MavenPublication) {
+            from components.java
+            groupId = 'cantwealldisagree'
+            artifactId = 'CWADLib'
+            version = "0.00.0.1-alpha"
+
+            // The following line specifies the path where the JAR file will be published
+        }
+    }
+    repositories {
+        maven {
+            url "file:///D:/maven/repositories/private/"
+        }
+    }
 }

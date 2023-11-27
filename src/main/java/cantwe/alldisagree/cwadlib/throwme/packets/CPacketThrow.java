@@ -25,8 +25,8 @@ public class CPacketThrow extends BasePacket {
 		   DURING((byte)2),
 		   FINISH((byte)3);
 		
-		   private byte index;
-		   private State(byte i) {
+		   private final byte index;
+		   State(byte i) {
 			   this.index = i;
 
 		  }

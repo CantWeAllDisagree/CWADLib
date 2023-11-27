@@ -1,55 +1,48 @@
 plugins {
-    alias libs.plugins.loom
+    id 'fabric-loom' version '1.2-SNAPSHOT'
     id 'maven-publish'
 }
 
-archivesBaseName = project.archives_base_name
-version = project.version
+version = project.mod_version
 group = project.maven_group
 
 repositories {
-    maven { url "https://www.cursemaven.com" }
-    maven { url "https://maven.siphalor.de/"}
-    maven { url "https://api.modrinth.com/maven" }
-    maven { url "https://jitpack.io" }
-
-}
-
-loom{
-    accessWidenerPath = file("src/main/resources/CWADLib.accesswidener")
+    // Add repositories to retrieve artifacts from in here.
+    // You should only use this when depending on other mods because
+    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
+    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
+    // for more information about repositories.
 }
 
 dependencies {
-    minecraft libs.minecraft
-    mappings variantOf(libs.yarn) { classifier 'v2' }
-    modImplementation libs.bundles.fabricapi
-    // ARRP
-    modImplementation include("curse.maven:arrp-463113:3901211") { exclude group: "net.fabricmc.fabric-api" }
+    // To change the versions see the gradle.properties file
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-
-
-
-    // AMECS API
-    modApi (libs.amecs) { exclude group: "net.fabricmc.fabric-api" }
-    modRuntimeOnly libs.bundles.runtime
+    // Fabric API. This is technically optional, but you probably want it anyway.
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
-
 
 processResources {
     inputs.property "version", project.version
-    inputs.property "minecraft_version", libs.minecraft
-    inputs.property "loader_version", libs.fabricloader
+    inputs.property "minecraft_version", project.minecraft_version
+    inputs.property "loader_version", project.loader_version
     filteringCharset "UTF-8"
 
     filesMatching("fabric.mod.json") {
         expand "version": project.version,
-                "minecraft_version": libs.minecraft,
-                "loader_version": libs.fabricloader
+                "minecraft_version": project.minecraft_version,
+                "loader_version": project.loader_version
     }
 }
 
 def targetJavaVersion = 17
 tasks.withType(JavaCompile).configureEach {
+    // ensure that the encoding is set to UTF-8, no matter what the system default is
+    // this fixes some edge cases with special characters not displaying correctly
+    // see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
+    // If Javadoc is generated, this must be specified in that task too.
     it.options.encoding = "UTF-8"
     if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
         it.options.release = targetJavaVersion
@@ -61,6 +54,10 @@ java {
     if (JavaVersion.current() < javaVersion) {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
+    archivesBaseName = project.archives_base_name
+    // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+    // if it is present.
+    // If you remove this line, sources will not be generated.
     withSourcesJar()
 }
 
@@ -70,20 +67,19 @@ jar {
     }
 }
 
+// configure the maven publication
 publishing {
     publications {
-        modPublication(MavenPublication) {
+        mavenJava(MavenPublication) {
             from components.java
-            groupId = 'cantwealldisagree'
-            artifactId = 'CWADLib'
-            version = "0.00.0.1-alpha"
-
-            // The following line specifies the path where the JAR file will be published
         }
     }
+
+    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        maven {
-            url "file:///D:/maven/repositories/private/"
-        }
+        // Add repositories to publish to here.
+        // Notice: This block does NOT have the same function as the block in the top level.
+        // The repositories here will be used for publishing your artifact, not for
+        // retrieving dependencies.
     }
 }

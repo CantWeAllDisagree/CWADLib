@@ -22,7 +22,7 @@ import net.minecraft.client.util.InputUtil;
 
 @Environment(EnvType.CLIENT)
 public class KeyBindingHandler {
-	public static final KeyBinding KEYBINDING = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.cwadlib", InputUtil.Type.MOUSE, GLFW.GLFW_MOUSE_BUTTON_RIGHT, KeyBinding.GAMEPLAY_CATEGORY));
+	public static final KeyBinding KEYBINDING = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.cwadlib", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_R, KeyBinding.GAMEPLAY_CATEGORY));
 	
 	public static void registerKeyBindings() {
 

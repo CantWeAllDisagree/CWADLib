@@ -318,8 +318,6 @@ public class ThrowMeEntity extends PersistentProjectileEntity implements FlyingI
     public void onPlayerCollision(PlayerEntity entityIn) {
 
         Entity entity = this.getOwner();
-
-        //if (entity == null || entity.getUuid() == entityIn.getUuid() || this.inGroundTime > (ConfigRegistry.COMMON.get().times.ticksUntilWeaponLoseOwner))
         if (entity == null || entity.getUuid() == entityIn.getUuid() || this.inGroundTime > (20*7)) {
             super.onPlayerCollision(entityIn);
         }

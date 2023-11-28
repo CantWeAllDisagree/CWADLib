@@ -50,7 +50,7 @@ public class EventsHandler{
 
 		//boolean isThrowable = ConfigRegistry.COMMON.get().experimental.shouldThrowItemsToo;
 		boolean isThrowable = false;
-
+		
 		boolean haveAttributes = stack.getItem() instanceof CWADThrowMeSwordItem || stack.getItem() instanceof CWADThrowMeAxeItem;
 
 		PlayerThrowData data = ((IPlayerEntityMixin) serverplayer).getThrowPower();
@@ -124,7 +124,7 @@ public class EventsHandler{
 						types++;
 
 
-					toolMultiplier/=(types>0? types : 1);
+					toolMultiplier/= types;
 
 					if(toolMultiplier == 0.0F) {
 						toolMultiplier = 1.0F;
@@ -170,9 +170,6 @@ public class EventsHandler{
 		OnStartPlayerTick.EVENT.register((player)->{
 			if(!player.world.isClient()) {
 				PlayerThrowData throwMe = ((IPlayerEntityMixin)player).getThrowPower();
-
-				boolean attacked = player.getAttackCooldownProgress(0.0F) < 1.0F;
-				boolean cdConfig = false;
 
 				boolean changedItem = !ItemStack.areEqual(throwMe.getChargingStack(), player.getMainHandStack());
 

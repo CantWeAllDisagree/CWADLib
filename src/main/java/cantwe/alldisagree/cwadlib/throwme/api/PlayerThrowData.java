@@ -69,10 +69,6 @@ public class PlayerThrowData {
 		chargeTime = ticks;
 	}
 
-	/*public static int getMaximumCharge(PlayerEntity player) {
-		return MathHelper.floor(player.getAttackCooldownProgressPerTick()*ConfigRegistry.COMMON.get().times.castTimeMuliplier);
-	}*/
-
 	public static int getMaximumCharge(PlayerEntity player) {
 		return MathHelper.floor(player.getAttackCooldownProgressPerTick()*3.0D);
 	}

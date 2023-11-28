@@ -44,12 +44,6 @@ public class GravityEnchantment extends Enchantment{
 	}
 
 	@Override
-	/*public boolean isAcceptableItem(ItemStack stack) {
-		   boolean enchantAll = ConfigRegistry.COMMON.getConfig().enchantments.enchantAllWeapons;
-		   boolean isAxe = stack.getItem() instanceof AxeItem;
-		   boolean canApply = super.isAcceptableItem(stack);
-		   return (isAxe || canApply || enchantAll) && ConfigRegistry.COMMON.getConfig().enchantments.enableGravity;
-	}*/
 	public boolean isAcceptableItem(ItemStack stack) {
 		boolean enchantAll = false;
 		boolean isAxe = stack.getItem() instanceof AxeItem;
